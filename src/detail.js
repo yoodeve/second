@@ -18,7 +18,7 @@ const [circle, setCirBgC] = React.useState(0);//[색깔동구라미,색바꾸는
             <Imgdiv/>
             <Bar>
             {Array.from({ length: 5 }, (item, idx) => {
-              console.log(wall.w);
+              
             return (
               <Circle
                 circle={circle}
@@ -63,6 +63,7 @@ background-color: ${(props)=>props.circle < props.idx + 1 ? "#F3E9DD" : "#B7CADB
 const Imgdiv = styled.img.attrs({
   src: `${rude}`
 })`
+
 width: 100%;
 height: 100%;
 justify-content: center;

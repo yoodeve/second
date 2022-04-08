@@ -11,20 +11,22 @@ const Main = (props) => {
     const [round, setRoundBgC] = React.useState(0);
 
     const day_Arry = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"]
-
+    
     const week_day = Object.keys(day_Arry).map((da, i) => {
         
         return day_Arry[da];
+        
     });
 
     const week_rates = week_day.map((way, id) => {
+        
         return {
             day:way,
             rate:Math.floor(Math.random() * (Math.floor(5) - Math.floor(1))+ Math.floor(1))
         }
     });
 
-    // console.log(week_rates);
+    console.log(week_rates);
     return (
         <>
             <Title>내 일주일은 어땠을까</Title>
@@ -33,14 +35,13 @@ const Main = (props) => {
                     console.log(w.rate)
                 return (
             
-                    <Week
-                        noneof={week_rates.day}>
+                    <Week>
                         <Yoil>
                             {w.day}
                         </Yoil>
                     
                         {Array.from({ length: 5 }, (item, idx) => {
-                            
+                            // console.log(idx);
                             return (
                             <Round 
                             rate={w.rate}
@@ -89,7 +90,7 @@ margin: 1rem 0px;
 
 const Yoil = styled.p`
 margin: 0px 0.5rem 0px 0px;
-font-Weight: bold;
+font-weight: bold;
 `
 
 const Tri = styled.div`
